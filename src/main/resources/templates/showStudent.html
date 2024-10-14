@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org"
+      xmlns:layout="www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<meta charset="UTF-8">
+<title>School Manager</title>
+<!-- 전체 적용될 CSS -->
+<th:block layout:fragment="css"></th:block>
+<!-- 전체 적용될 스크립트 -->
+<th:block layout:fragment="script"></th:block>
+
+<!-- 우리가 작업할 공간 -->
+<body>
+<div layout:fragment="content" class="content">
+  <div>학생목록</div><p></p>
+  <table border="1">
+    <thead align="center">
+    <tr>
+      <td>학번</td>
+      <td>이름</td>
+      <td>학년</td>
+      <td>반</td>
+      <td>번호</td>
+      <td>성별</td>
+      <td>전화번호</td>
+      <td>주소</td>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr>
+      <td>10101</td>
+      <td>김행복</td>
+      <td>1</td>
+      <td>01</td>
+      <td>01</td>
+      <td>남</td>
+      <td>010-1111-2222</td>
+      <td>서울 동대문구 휘경1동</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

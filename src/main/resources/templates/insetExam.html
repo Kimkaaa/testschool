@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org"
+      xmlns:layout="www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<meta charset="UTF-8">
+<title>School Manager</title>
+<!-- 전체 적용될 CSS -->
+<th:block layout:fragment="css"></th:block>
+<!-- 전체 적용될 스크립트 -->
+<th:block layout:fragment="script"></th:block>
+
+<!-- 우리가 작업할 공간 -->
+<body>
+<div layout:fragment="content" class="content">
+  <div class="mt-3 text-center">성적입력</div>
+  <div class="container mt-5">
+    <form th:action="@{/insertExam}" method="post" th:object="${dto}">
+      <table class="table table-bordered text-center align-middle">
+        <tr>
+          <th>학번</th>
+          <td>
+              <select class="form-select" th:field="*{exam_no}">
+                <option value="" disabled selected>학번을 선택하세요</option>
+                <option th:eac
+                        value="*{no}">10101</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <th>국어점수</th>
+          <td><input type="text" class="form-control" th:field="*{kor}"></td>
+        </tr>
+        <tr>
+          <th>수학점수</th>
+          <td><input type="text" class="form-control" th:field="*{math}"></td>
+        </tr>
+        <tr>
+          <th>영어점수</th>
+          <td><input type="text" class="form-control" th:field="*{eng}"></td>
+        </tr>
+        <tr>
+          <th>역사점수</th>
+          <td><input type="text" class="form-control" th:field="*{hist}"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit" class="btn btn-primary">등록하기</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+</html>
